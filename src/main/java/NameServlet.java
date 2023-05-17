@@ -19,8 +19,6 @@ public class NameServlet extends HttpServlet {
         String name = req.getParameter("Asia");
         out.println("<h1>Hello, my name is Kotlin!</h1>");
 
-
-
     }
 
 
