@@ -8,6 +8,15 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+  if (request.getMethod().equalsIgnoreCase("post")) {
+    String username = request.getParameter("username");
+    String password = request.getParameter("password");
+    if (username.equals("admin") && password.equals("password")) {
+      response.sendRedirect("/profile");
+    }
+
+  } %>
 <html>
 <head>
     <title>Title</title>
@@ -21,15 +30,7 @@
   <input type="text" id="password" name="password">
   <button type="submit">Submit</button>
 </form>
-<%
-    if (request.getMethod().equalsIgnoreCase("post")) {
-      String username = request.getParameter("username");
-      String password = request.getParameter("password");
-      if (username.equals("admin") && password.equals("password")) {
-        response.sendRedirect("/profile");
-      }
-
-  } %>
 <jsp: include page="partials/scripts.jsp"/>
+</jsp:include>
 </body>
 </html>
