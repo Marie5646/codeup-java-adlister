@@ -4,18 +4,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
-public class PizzaOrderServlet extends HttpServlet {
+
+@WebServlet(name = "PickAColorServlet", urlPatterns = "/pick-color")
+
+public class PickAColorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/pizza_order.jsp").forward(req, resp);
-    }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getParameter("crust"));
-        System.out.println(req.getParameter("sauce"));
-        System.out.println(req.getParameter("size"));
-        System.out.println(req.getParameter("toppings"));
+       req.getRequestDispatcher("/pick_a_color.jsp").forward(req,resp);
+
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+         resp.sendRedirect("/viewcolor?color=color");
+         String color = req.getParameter("color");
+    }
 }
