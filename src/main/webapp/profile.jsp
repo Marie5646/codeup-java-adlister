@@ -12,5 +12,12 @@
         <h1>Viewing your profile.</h1>
     </div>
 
+
+    <form action="ads" method="get">
+    <button type="submit" value="ads">View Ads</button>
+    </form>
+
+
+
 </body>
 </html>
