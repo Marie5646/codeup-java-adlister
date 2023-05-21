@@ -8,15 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <style>
-        body{
-            /*background-color: ;*/
-        }
-    </style>
     <title>Title</title>
 
 </head>
 <body>
+<form action="/pick-color" method="post">
 
+    <label for="color">Pick a color</label>
+    <input type="text" name="color" id="color">
+    <button>Submit</button>
+</form>
 </body>
 </html>
