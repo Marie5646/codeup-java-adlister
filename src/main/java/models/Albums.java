@@ -5,16 +5,16 @@ import java.util.Date;
 public class Albums implements Serializable{
     public int id;
     public String artistName;
-    public String albumnName;
+    public String albumName;
     public String genre;
     public int releaseDate;
     public double sales;
 
 
-    public Albums(int id, String artistName, String albumnName, String genre, int releaseDate, double sales) {
+    public Albums(int id, String artistName, String albumName, String genre, int releaseDate, double sales) {
         this.id = id;
         this.artistName = artistName;
-        this.albumnName = albumnName;
+        this.albumName = albumName;
         this.genre = genre;
         this.releaseDate = releaseDate;
         this.sales = sales;
@@ -36,12 +36,12 @@ public class Albums implements Serializable{
         this.artistName = artistName;
     }
 
-    public String getAlbumnName() {
-        return albumnName;
+    public String getAlbumName() {
+        return albumName;
     }
 
-    public void setAlbumnName(String albumnName) {
-        this.albumnName = albumnName;
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
     }
 
     public String getGenre() {
