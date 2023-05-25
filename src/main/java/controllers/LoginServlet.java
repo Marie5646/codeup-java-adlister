@@ -12,12 +12,20 @@ import java.io.IOException;
 @WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD:src/main/java/controllers/LoginServlet.java
            if(request.getSession().getAttribute("user") != null){
                response.sendRedirect("/profile");
                return;
            }
            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request,response);
 
+=======
+        if (request.getSession().getAttribute("user") != null) {
+            response.sendRedirect("/profile");
+            return;
+        }
+        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+>>>>>>> jdbc-exercise:src/main/java/LoginServlet.java
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -27,6 +35,7 @@ public class LoginServlet extends HttpServlet {
         boolean validAttempt = username.equals("admin") && password.equals("password");
 
         if (validAttempt) {
+            request.getSession().setAttribute("user", username);
             response.sendRedirect("/profile");
             request.getSession().setAttribute("user", username);
 

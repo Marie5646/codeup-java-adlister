@@ -14,8 +14,12 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+<<<<<<< HEAD:src/main/java/controllers/ViewProfileServlet.java
             request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
         }
 
+=======
+        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+>>>>>>> jdbc-exercise:src/main/java/ViewProfileServlet.java
     }
 

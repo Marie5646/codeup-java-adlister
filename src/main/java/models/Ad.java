@@ -16,7 +16,11 @@ public class Ad {
     public Ad(long userId, String title, String description) {
         this.userId = userId;
         this.title = title;
+<<<<<<< HEAD:src/main/java/models/Ad.java
         this.description = title;
+=======
+        this.description = description;
+>>>>>>> jdbc-exercise:src/main/java/Ad.java
     }
 
     public long getId() {

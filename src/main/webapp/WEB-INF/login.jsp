@@ -1,12 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+<<<<<<< HEAD:src/main/webapp/WEB-INF/login.jsp
     <jsp:include page="/WEB-INF/head.jsp">
         <jsp:param name="title" value="Please Log In"/>
+=======
+    <jsp:include page="/WEB-INF/partials/head.jsp">
+        <jsp:param name="title" value="Please Log In" />
+>>>>>>> jdbc-exercise:src/main/webapp/login.jsp
     </jsp:include>
     <title>Login</title></head>
 <body>
+<<<<<<< HEAD:src/main/webapp/WEB-INF/login.jsp
     <jsp:include page="/WEB-INF/navbar.jsp"/>
+=======
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+>>>>>>> jdbc-exercise:src/main/webapp/login.jsp
     <div class="container">
         <h1>Please Log In</h1>
         <form action="/login" method="POST">
