@@ -1,29 +1,27 @@
 package dao;
-
 import com.mysql.cj.jdbc.Driver;
-import models.Ad;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import models.Ad;
+import sun.security.krb5.Config;
 
 public class MySQLAdsDao implements Ads {
 
-      Config config = new Config();
-      private Connection connection;
+      private Connection connection = null;
 
 
     public MySQLAdsDao(Config config) {
             try {
                 DriverManager.registerDriver(new Driver());
-                connection = DriverManager.getConnection(config.getUrl(),
+                connection = DriverManager.getConnection(
+                        config.getUrl(),
                         config.getUsername(),
-                        config.getPassword());
+                        config.getPassword()
+                );
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
-
-
         }
 
 
