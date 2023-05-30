@@ -6,9 +6,6 @@ public class User {
     public String password;
     public String email;
 
-    public long getId() {
-        return id;
-    }
 
     public User(long id, String username, String password, String email) {
         this.id = id;
@@ -16,6 +13,10 @@ public class User {
         this.password = password;
         this.email = email;
 
+    }
+
+    public long getId() {
+        return id;
     }
 
     public void setId(long id) {

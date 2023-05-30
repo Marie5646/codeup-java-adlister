@@ -2,7 +2,7 @@ package dao;
 
 import com.mysql.cj.jdbc.Driver;
 import models.User;
-import sun.security.krb5.Config;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class MySQLUserDao implements Users {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
                     config.getUrl(),
-                    config.getUsername(),
+                    config.getUser(),
                     config.getPassword()
             );
         } catch (SQLException ex) {

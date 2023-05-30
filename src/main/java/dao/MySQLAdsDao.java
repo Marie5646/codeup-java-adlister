@@ -4,19 +4,20 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import models.Ad;
-import sun.security.krb5.Config;
+
 
 public class MySQLAdsDao implements Ads {
 
-      private Connection connection = null;
+      private Connection connection;
 
 
     public MySQLAdsDao(Config config) {
             try {
+//                DriverManager.registerDriver(new Driver());
                 DriverManager.registerDriver(new Driver());
                 connection = DriverManager.getConnection(
                         config.getUrl(),
-                        config.getUsername(),
+                        config.getUser(),
                         config.getPassword()
                 );
             } catch (SQLException ex) {
@@ -27,7 +28,7 @@ public class MySQLAdsDao implements Ads {
 
 
     @Override
-    public List<Ad> all() throws SQLException {
+    public List<Ad> all() {
         try {
             Statement stmt = connection.createStatement();
 
