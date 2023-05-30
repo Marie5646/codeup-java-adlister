@@ -45,7 +45,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Long insertAd(Ad ad) {
+    public long insertAd(Ad ad) {
         try {
             Statement stm = connection.createStatement();
             String insertQuery = String.format("INSERT INTO ads (user_id, title, description) VALUES('%s','%s','%s')", ad.getUserId(), ad.getTitle(), ad.getDescription());

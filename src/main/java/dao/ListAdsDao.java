@@ -15,26 +15,19 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
-<<<<<<< HEAD:src/main/java/dao/ListAdsDao.java
-    @Override
-    public Long insertAd(Ad ad) {
-        if(ads == null){
-            ads = generateAds();
-        }
 
-=======
-    public Long insert(Ad ad) {
-        // make sure we have ads
+    @Override
+    public long insertAd(Ad ad) {
         if (ads == null) {
             ads = generateAds();
         }
         // we'll assign an "id" here based on the size of the ads list
         // really the database would handle this
->>>>>>> jdbc-exercise:src/main/java/ListAdsDao.java
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
-    }
+        }
+
 
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
@@ -65,3 +58,8 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 }
+
+
+}
+
+

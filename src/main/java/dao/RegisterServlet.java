@@ -37,7 +37,7 @@ public class RegisterServlet {
         }
 
 
-        User user = new User(rs.getLong("id"), username,email,hashWord);
+        User user = new User(username,email,hashWord);
         DaoFactory.getUserDao().insertUser(user);
         response.sendRedirect("/login");
         

@@ -3,6 +3,7 @@ package controllers;
 import dao.DaoFactory;
 import models.Ad;
 import models.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,15 +28,16 @@ import java.io.IOException;
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
+            User user = (User) DaoFactory.getUserDao().findByUsername(username);
 
             // TODO: find a record in your database that matches the submitted password
             // TODO: make sure we find a user with that username
             // TODO: check the submitted password against what you have in your database
 
 
+            boolean validAttempt = BCrypt.checkpw(password, user.getPassword());
             if (validAttempt) {
-                request.getSession().setAttribute("user", username);
-
+                request.getSession().setAttribute("user", user);
 
 
                 response.sendRedirect("/profile");
@@ -44,8 +46,6 @@ import java.io.IOException;
             }
 
 
-
-
-
         }
+    }
 

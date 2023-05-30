@@ -33,7 +33,7 @@ public class MySQLUserDao implements Users {
             ResultSet rs = stmt.executeQuery(selectUsers);
             List<User> newUser = new ArrayList<>();
             while (rs.next()) {
-                newUser.add(new User(rs.getLong("id"), rs.getString("username"), rs.getString("password"), rs.getString("email")));
+                newUser.add(new User(rs.getString("username"), rs.getString("password"), rs.getString("email")));
             }
             return newUser;
         } catch (SQLException e) {
@@ -67,7 +67,6 @@ public class MySQLUserDao implements Users {
             return null;
         }
         return new User(
-                rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("password"),
                 rs.getString("email")
