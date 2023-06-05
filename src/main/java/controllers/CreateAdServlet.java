@@ -2,6 +2,7 @@ package controllers;
 
 import dao.DaoFactory;
 import models.Ad;
+import models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,13 +17,21 @@ import java.io.IOException;
 public class CreateAdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(req.getSession().getAttribute("user") == null) {
+            resp.sendRedirect("/login");
+            // add a return statement to exit out of the entire method.
+            return;
+        }
+
         req.getRequestDispatcher("/WEB-INF/ads/create.jsp").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User loggedInUser = (User) req.getSession().getAttribute("user");
+
         Ad ad = new Ad(
-        1,
+        loggedInUser.getId(),
         req.getParameter("title"),
         req.getParameter("description")
         );
