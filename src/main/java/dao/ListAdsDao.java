@@ -60,6 +60,5 @@ public class ListAdsDao implements Ads {
 }
 
 
-}
 
 
