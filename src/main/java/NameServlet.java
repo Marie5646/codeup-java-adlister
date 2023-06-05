@@ -16,10 +16,13 @@ public class NameServlet extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
-        String name = req.getParameter("Asia");
-        out.println("<h1>Hello, my name is Kotlin!</h1>");
+        String name = req.getParameter("name");
+
+        if (name == null) {
+            name = "World";
+        }
+        out.println("<h1>Hello," + name + "</h1>");
+
 
     }
-
-
 }
